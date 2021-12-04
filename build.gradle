@@ -89,17 +89,17 @@ clean.doLast {
 }
 
 shadowJar {
-    archiveFileName = findProperty("plugin-name") + " v" + findProperty("version") + ".jar"
+    archiveFileName = findProperty("plugin-name") + "-v" + findProperty("version") + ".jar"
 }
 
 jar {
-    archiveFileName = findProperty("plugin-name") + " v" + findProperty("version") + ".jar"
+    archiveFileName = findProperty("plugin-name") + "-v" + findProperty("version") + ".jar"
 }
 
 group = 'com.willfp'
 archivesBaseName = project.name
 version = findProperty("version")
-java.sourceCompatibility = JavaVersion.VERSION_17
+java.sourceCompatibility = JavaVersion.VERSION_16
 
 compileJava.options.encoding = 'UTF-8'
 
@@ -110,3 +110,4 @@ publishing {
         }
     }
 }
+targetCompatibility = JavaVersion.VERSION_16
